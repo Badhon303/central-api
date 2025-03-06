@@ -11,7 +11,7 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Blog } from './collections/Blog'
 import { Event } from './collections/Event'
-import { Product } from './collections/Product'
+import { Product } from './collections/Product' //product
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
