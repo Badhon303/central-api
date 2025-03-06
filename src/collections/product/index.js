@@ -2,6 +2,7 @@ import { anyone } from '../access/anyone'
 import { adminsAndEditors } from '../access/adminsAndEditors'
 
 export const Product = {
+  //product
   slug: 'product',
   admin: {
     useAsTitle: 'title',
