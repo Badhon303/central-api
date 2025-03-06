@@ -75,10 +75,10 @@ export default buildConfig({
     payloadCloudPlugin(),
     // storage-adapter-placeholder
   ],
-  cors: ['http://localhost:3000'],
+  cors: ['http://localhost:3000', 'https://central.codemonks.xyz'],
   // If you are protecting resources behind user authentication,
   // This will allow cookies to be sent between the two domains
-  csrf: ['http://localhost:3000'],
+  csrf: ['http://localhost:3000', 'https://central.codemonks.xyz'],
   cookiePrefix: 'rf',
   upload: {
     limits: {
