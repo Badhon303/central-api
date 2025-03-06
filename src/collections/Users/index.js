@@ -5,7 +5,9 @@ export const Users = {
   admin: {
     useAsTitle: 'email',
   },
-  auth: true,
+  auth: {
+    tokenExpiration: 7200,
+  },
   access: {
     read: ({ req: { user } }) => {
       if (user) {

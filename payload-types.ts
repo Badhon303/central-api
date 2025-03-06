@@ -70,7 +70,6 @@ export interface Config {
     media: Media;
     blogs: Blog;
     events: Event;
-    product: Product;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -81,7 +80,6 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     blogs: BlogsSelect<false> | BlogsSelect<true>;
     events: EventsSelect<false> | EventsSelect<true>;
-    product: ProductSelect<false> | ProductSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -183,18 +181,6 @@ export interface Event {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "product".
- */
-export interface Product {
-  id: string;
-  title: string;
-  details: string;
-  img?: (string | null) | Media;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -215,10 +201,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'events';
         value: string | Event;
-      } | null)
-    | ({
-        relationTo: 'product';
-        value: string | Product;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -316,17 +298,6 @@ export interface EventsSelect<T extends boolean = true> {
   location?: T;
   date?: T;
   description?: T;
-  img?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "product_select".
- */
-export interface ProductSelect<T extends boolean = true> {
-  title?: T;
-  details?: T;
   img?: T;
   updatedAt?: T;
   createdAt?: T;
