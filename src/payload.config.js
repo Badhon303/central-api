@@ -75,10 +75,18 @@ export default buildConfig({
     payloadCloudPlugin(),
     // storage-adapter-placeholder
   ],
-  cors: ['http://localhost:3000', 'https://central.codemonks.xyz'],
+  cors: [
+    'http://localhost:3000',
+    'https://central.codemonks.xyz',
+    'https://central-app.vercel.app/',
+  ],
   // If you are protecting resources behind user authentication,
   // This will allow cookies to be sent between the two domains
-  csrf: ['http://localhost:3000', 'https://central.codemonks.xyz'],
+  csrf: [
+    'http://localhost:3000',
+    'https://central.codemonks.xyz',
+    'https://central-app.vercel.app/',
+  ],
   cookiePrefix: 'rf',
   upload: {
     limits: {
