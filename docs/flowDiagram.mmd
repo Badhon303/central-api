@@ -1,0 +1,27 @@
+graph TD
+    A[CMS System] -->|Login| B{User Authentication}
+    B -->|Admin| C[Admin Dashboard]
+    B -->|Editor| D[Editor Dashboard]
+
+
+    %% Admin Privileges
+    C -->|Manage Users| E[Create/Edit/Delete Users]
+   
+    %% Common CRUD Operations
+    C -->|Manage Blogs| F[Add/Edit/Delete Blogs]
+    D -->|Manage Blogs| F
+
+
+    C -->|Manage Events| G[Add/Edit/Delete Events]
+    D -->|Manage Events| G
+
+
+    C -->|Manage Products| H[Add/Edit/Delete Products]
+    D -->|Manage Products| H
+
+
+    %% Content Publishing
+    F -->|Displayed on Website| I[Company Portfolio Site]
+    G -->|Displayed on Website| I
+    H -->|Displayed on Website| I
+
