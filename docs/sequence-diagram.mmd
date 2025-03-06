@@ -1,0 +1,58 @@
+sequenceDiagram
+    participant Admin as Admin
+    participant Editor as Editor
+    participant CMS_System as CMS_System
+    participant Database as Database
+    participant P1 as New Participant
+
+    Admin ->> CMS_System: Login
+    CMS_System -->> Admin: Authentication Successful
+    Admin ->> CMS_System: Create User (Editor)
+    CMS_System ->> Database: Store User Data
+    Database -->> CMS_System: User Created
+    CMS_System -->> Admin: User Created Successfully
+    Editor ->> CMS_System: Login
+    CMS_System -->> Editor: Authentication Successful
+    Admin ->> CMS_System: Add Blog Post
+    CMS_System ->> Database: Store Blog Data
+    Database -->> CMS_System: Blog Created
+    CMS_System -->> Admin: Blog Added Successfully
+    Editor ->> CMS_System: Edit Blog Post
+    CMS_System ->> Database: Update Blog Data
+    Database -->> CMS_System: Blog Updated
+    CMS_System -->> Editor: Blog Updated Successfully
+    Editor ->> CMS_System: Delete Blog Post
+    CMS_System ->> Database: Remove Blog Data
+    Database -->> CMS_System: Blog Deleted
+    CMS_System -->> Editor: Blog Deleted Successfully
+    Admin ->> CMS_System: Add Event
+    CMS_System ->> Database: Store Event Data
+    Database -->> CMS_System: Event Created
+    CMS_System -->> Admin: Event Added Successfully
+    Editor ->> CMS_System: Edit Event
+    CMS_System ->> Database: Update Event Data
+    Database -->> CMS_System: Event Updated
+    CMS_System -->> Editor: Event Updated Successfully
+    Editor ->> CMS_System: Delete Event
+    CMS_System ->> Database: Remove Event Data
+    Database -->> CMS_System: Event Deleted
+    CMS_System -->> Editor: Event Deleted Successfully
+    Admin ->> CMS_System: Add Product
+    CMS_System ->> Database: Store Product Data
+    Database -->> CMS_System: Product Created
+    CMS_System -->> Admin: Product Added Successfully
+    Editor ->> CMS_System: Edit Product
+    CMS_System ->> Database: Update Product Data
+    Database -->> CMS_System: Product Updated
+    CMS_System -->> Editor: Product Updated Successfully
+    Editor ->> CMS_System: Delete Product
+    CMS_System ->> Database: Remove Product Data
+    Database -->> CMS_System: Product Deleted
+    CMS_System -->> Editor: Product Deleted Successfully
+    CMS_System ->> Database: Fetch Latest Blogs, Events, Products
+    Database -->> CMS_System: Send Latest Data
+    CMS_System -->> Admin: Content Displayed on Website
+    CMS_System -->> Editor: Content Displayed on Website
+    
+    %% Styling for Dark Mode
+    %%{init: {"theme": "dark"}}%%

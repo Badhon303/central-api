@@ -1,0 +1,56 @@
+@startuml
+class User {
+    +id: UUID
+    +name: String
+    +email: String
+    +password: String
+    +login(): void
+}
+
+class Admin {
+    +createUser(user: User): void
+    +deleteUser(userId: UUID): void
+}
+    
+class Editor {
+    +manageContent(content: Content): void
+}
+
+class CMS_System {
+    +authenticateUser(email: String, password: String): User
+    +storeContent(content: Content): void
+    +updateContent(contentId: UUID, data: Object): void
+    +deleteContent(contentId: UUID): void
+}
+
+class Content {
+    +id: UUID
+    +title: String
+    +description: String
+    +createdAt: Date
+    +updatedAt: Date
+}
+
+class Blog {
+    +category: String
+    +tags: List<String>
+}
+
+class Event {
+    +date: Date
+    +location: String
+}
+
+class Product {
+    +price: Float
+    +stock: Int
+}
+
+User <|-- Admin
+User <|-- Editor
+CMS_System o-- User : Manages
+CMS_System o-- Content : Stores
+Content <|-- Blog
+Content <|-- Event
+Content <|-- Product
+Admin --> Editor : Can create

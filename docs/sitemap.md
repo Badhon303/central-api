@@ -111,4 +111,9 @@
 - **Address & Contact Information**
 - **Social Media Links**
 
-![Alt flow-diagram](flow-diagram.svg)
+![Alt sitemap](./sitemap.png)
+![Alt flow-diagram](./flow-diagram.svg)
+![Alt sequence-diagram](./sequence-diagram.svg)
+![Alt er-diagram](./er-diagram.svg)
+
+# https://documenter.getpostman.com/view/3133402/2sAYdmkTQc
