@@ -11,6 +11,7 @@ import { Users } from './collections/Users'
 import { Media } from './collections/Media'
 import { Blog } from './collections/Blog'
 import { Event } from './collections/Event'
+import { Job } from './collections/Job'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -55,7 +56,7 @@ export default buildConfig({
   routes: {
     admin: '/c-admin',
   },
-  collections: [Users, Media, Blog, Event],
+  collections: [Users, Media, Blog, Event, Job],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   // typescript: {
