@@ -9,7 +9,8 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
-import { Blog } from './collections/Blog'
+import { Project } from './collections/Project'
+import { Insight } from './collections/Insight'
 import { Event } from './collections/Event'
 import { Job } from './collections/Job'
 
@@ -56,7 +57,7 @@ export default buildConfig({
   routes: {
     admin: '/c-admin',
   },
-  collections: [Users, Media, Blog, Event, Job],
+  collections: [Users, Media, Event, Project, Insight, Job],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   // typescript: {
