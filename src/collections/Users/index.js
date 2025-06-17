@@ -4,6 +4,14 @@ export const Users = {
   slug: 'users',
   admin: {
     useAsTitle: 'email',
+    hidden: ({ user }) => {
+      if (user) {
+        if (user?.role !== 'admin') {
+          return true
+        }
+        return false
+      }
+    },
   },
   auth: {
     tokenExpiration: 7200,
