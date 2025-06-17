@@ -18,7 +18,7 @@ export const Users = {
     cookies: {
       // ...(process.env.NODE_ENV !== 'development' && {
       sameSite: 'None',
-      domain: 'api.central-bd.com',
+      // domain: process.env.COOKIE_DOMAIN,
       secure: true,
       // }),
     },
