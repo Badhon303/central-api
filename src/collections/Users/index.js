@@ -16,11 +16,11 @@ export const Users = {
   auth: {
     // tokenExpiration: 7200,
     cookies: {
-      // ...(process.env.NODE_ENV !== 'development' && {
-      sameSite: 'None',
-      // domain: process.env.COOKIE_DOMAIN,
-      secure: true,
-      // }),
+      ...(process.env.NODE_ENV !== 'development' && {
+        sameSite: 'None',
+        domain: process.env.COOKIE_DOMAIN,
+        secure: true,
+      }),
     },
   },
   access: {
