@@ -91,7 +91,7 @@ export default buildConfig({
     'https://central-bd.com',
     'https://central-app.vercel.app',
   ],
-  cookiePrefix: 'rf',
+  // cookiePrefix: 'rf',
   upload: {
     limits: {
       fileSize: 5 * 1024 * 1024, // 5MB, written in bytes
