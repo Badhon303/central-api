@@ -80,6 +80,7 @@ export default buildConfig({
   cors: [
     'http://localhost:3000',
     'https://central.codemonks.xyz',
+    'https://central-bd.com',
     'https://central-app.vercel.app',
   ],
   // If you are protecting resources behind user authentication,
@@ -87,6 +88,7 @@ export default buildConfig({
   csrf: [
     'http://localhost:3000',
     'https://central.codemonks.xyz',
+    'https://central-bd.com',
     'https://central-app.vercel.app',
   ],
   cookiePrefix: 'rf',
