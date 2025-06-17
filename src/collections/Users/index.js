@@ -15,6 +15,11 @@ export const Users = {
   },
   auth: {
     tokenExpiration: 7200,
+    cookies: {
+      secure: true,
+      sameSite: 'None',
+      domain: process.env.COOKIE_DOMAIN,
+    },
   },
   access: {
     read: ({ req: { user } }) => {
