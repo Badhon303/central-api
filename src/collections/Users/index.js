@@ -4,23 +4,23 @@ export const Users = {
   slug: 'users',
   admin: {
     useAsTitle: 'email',
-    // hidden: ({ user }) => {
-    //   if (user) {
-    //     if (user?.role !== 'admin') {
-    //       return true
-    //     }
-    //     return false
-    //   }
-    // },
+    hidden: ({ user }) => {
+      if (user) {
+        if (user?.role !== 'admin') {
+          return true
+        }
+        return false
+      }
+    },
   },
   auth: {
     tokenExpiration: 7200,
     cookies: {
-      ...(process.env.NODE_ENV !== 'development' && {
-        sameSite: 'None',
-        domain: process.env.COOKIE_DOMAIN,
-        secure: true,
-      }),
+      // ...(process.env.NODE_ENV !== 'development' && {
+      sameSite: 'None',
+      domain: 'api.central-bd.com',
+      secure: true,
+      // }),
     },
   },
   access: {
