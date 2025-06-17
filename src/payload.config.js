@@ -79,18 +79,20 @@ export default buildConfig({
   ],
   cors: [
     'http://localhost:3000',
+    'http://localhost:1339',
     'https://central.codemonks.xyz',
     'https://central-bd.com',
-    // 'https://api.central-bd.com',
+    'https://api.central-bd.com',
     'https://central-app.vercel.app',
   ],
   // If you are protecting resources behind user authentication,
   // This will allow cookies to be sent between the two domains
   csrf: [
     'http://localhost:3000',
+    'http://localhost:1339',
     'https://central.codemonks.xyz',
     'https://central-bd.com',
-    // 'https://api.central-bd.com',
+    'https://api.central-bd.com',
     'https://central-app.vercel.app',
   ],
   // cookiePrefix: 'rf',

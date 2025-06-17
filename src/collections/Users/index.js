@@ -14,7 +14,7 @@ export const Users = {
     },
   },
   auth: {
-    // tokenExpiration: 7200,
+    tokenExpiration: 7200,
     cookies: {
       ...(process.env.NODE_ENV !== 'development' && {
         sameSite: 'None',
