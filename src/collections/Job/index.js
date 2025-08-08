@@ -21,6 +21,33 @@ export const Job = {
       maxLength: 99,
     },
     {
+      name: 'jobPosition',
+      type: 'select',
+      required: true,
+      options: [
+        {
+          label: 'Business Development',
+          value: 'business',
+        },
+        {
+          label: 'Marketing',
+          value: 'marketing',
+        },
+        {
+          label: 'QC Analysis',
+          value: 'qc',
+        },
+        {
+          label: 'Finance',
+          value: 'finance',
+        },
+        {
+          label: 'Team Support Specialist',
+          value: 'support',
+        },
+      ],
+    },
+    {
       name: 'designation',
       type: 'text',
       maxLength: 99,

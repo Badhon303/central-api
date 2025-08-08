@@ -26,13 +26,43 @@ export const Event = {
       maxLength: 999,
     },
     {
-      name: 'date',
+      name: 'startDate',
       type: 'date',
+    },
+    {
+      name: 'endDate',
+      type: 'date',
+      validate: (value, { siblingData }) => {
+        // Only run validation if both startDate and endDate have values
+        if (siblingData.startDate && value) {
+          // Compare dates to ensure endDate is not before startDate
+          if (new Date(value) < new Date(siblingData.startDate)) {
+            return 'End date cannot be before the start date.'
+          }
+        }
+        return true
+      },
     },
     {
       name: 'description',
       type: 'text',
       maxLength: 999999,
+    },
+    {
+      name: 'link',
+      type: 'text',
+      maxLength: 999999,
+      validate: (value) => {
+        if (value) {
+          // Regular expression to validate a URL
+          const urlRegex =
+            /^(https?:\/\/)?([a-zA-Z0-9-]+\.){1,}([a-zA-Z]{2,})([\/\w\.-]*)*\/?(\?[^\s]*)?$/
+          if (!urlRegex.test(value)) {
+            return 'Please enter a valid URL.'
+          }
+        }
+        return true
+      },
     },
     {
       name: 'img',

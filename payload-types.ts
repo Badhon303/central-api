@@ -166,8 +166,10 @@ export interface Event {
   id: string;
   title: string;
   location?: string | null;
-  date?: string | null;
+  startDate?: string | null;
+  endDate?: string | null;
   description?: string | null;
+  link?: string | null;
   img?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
@@ -204,6 +206,7 @@ export interface Insight {
 export interface Job {
   id: string;
   title: string;
+  jobPosition: 'business' | 'marketing' | 'qc' | 'finance' | 'support';
   designation?: string | null;
   jobType?: ('onsite' | 'remote' | 'hybrid') | null;
   education?: string | null;
@@ -341,8 +344,10 @@ export interface MediaSelect<T extends boolean = true> {
 export interface EventsSelect<T extends boolean = true> {
   title?: T;
   location?: T;
-  date?: T;
+  startDate?: T;
+  endDate?: T;
   description?: T;
+  link?: T;
   img?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -376,6 +381,7 @@ export interface InsightsSelect<T extends boolean = true> {
  */
 export interface JobsSelect<T extends boolean = true> {
   title?: T;
+  jobPosition?: T;
   designation?: T;
   jobType?: T;
   education?: T;
