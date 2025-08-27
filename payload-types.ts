@@ -73,6 +73,7 @@ export interface Config {
     projects: Project;
     insights: Insight;
     jobs: Job;
+    'whats-new': WhatsNew;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -85,6 +86,7 @@ export interface Config {
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
     insights: InsightsSelect<false> | InsightsSelect<true>;
     jobs: JobsSelect<false> | JobsSelect<true>;
+    'whats-new': WhatsNewSelect<false> | WhatsNewSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -145,7 +147,7 @@ export interface User {
  */
 export interface Media {
   id: string;
-  alt: string;
+  alt?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -232,6 +234,18 @@ export interface Job {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "whats-new".
+ */
+export interface WhatsNew {
+  id: string;
+  title: string;
+  date?: string | null;
+  details: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-locked-documents".
  */
 export interface PayloadLockedDocument {
@@ -260,6 +274,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'jobs';
         value: string | Job;
+      } | null)
+    | ({
+        relationTo: 'whats-new';
+        value: string | WhatsNew;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -387,6 +405,17 @@ export interface JobsSelect<T extends boolean = true> {
   education?: T;
   yearOfExperience?: T;
   deadline?: T;
+  details?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "whats-new_select".
+ */
+export interface WhatsNewSelect<T extends boolean = true> {
+  title?: T;
+  date?: T;
   details?: T;
   updatedAt?: T;
   createdAt?: T;

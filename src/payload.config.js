@@ -13,6 +13,7 @@ import { Project } from './collections/Project'
 import { Insight } from './collections/Insight'
 import { Event } from './collections/Event'
 import { Job } from './collections/Job'
+import { WhatsNew } from './collections/WhatsNew'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -57,7 +58,7 @@ export default buildConfig({
   routes: {
     admin: '/c-admin',
   },
-  collections: [Users, Media, Event, Project, Insight, Job],
+  collections: [Users, Media, Event, Project, Insight, Job, WhatsNew],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   // typescript: {

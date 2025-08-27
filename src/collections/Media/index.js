@@ -7,7 +7,7 @@ export const Media = {
     {
       name: 'alt',
       type: 'text',
-      required: true,
+      // required: true,
     },
   ],
   upload: true,
